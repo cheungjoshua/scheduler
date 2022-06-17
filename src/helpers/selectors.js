@@ -19,3 +19,22 @@ export function getAppointmentsForDay(state, day) {
 
   return appointmentArray;
 }
+
+export function getInterview(state, interview) {
+  // Return null if interview is empty
+  if (!interview) {
+    return null;
+  }
+
+  // Get ID from interview
+  const interviewerId = interview.interviewer;
+
+  // Get student from interview
+  const student = interview.student;
+
+  // Set Obj
+  const result = { student, interviewer: state.interviewers[interviewerId] };
+
+  // Return Obj
+  return result;
+}
