@@ -4,15 +4,13 @@ export function getAppointmentsForDay(state, day) {
     return [];
   }
   // Get match day and make it a array
-  const daysArray = state.days.filter((ii) => ii.name === day);
+  const dayObj = state.days.find((ii) => ii.name === day);
   // Check, if get nothing. return []
-  if (daysArray.length === 0) {
+  if (!dayObj) {
     return [];
   }
-  const appointmentArray = daysArray[0].appointments.map((id) => {
-    if (state.appointments[id].id === id) {
-      return state.appointments[id];
-    }
+  const appointmentArray = dayObj.appointments.map((id) => {
+    return state.appointments[id];
   });
 
   return appointmentArray;
