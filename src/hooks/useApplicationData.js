@@ -33,14 +33,20 @@ const useApplicationData = () => {
       ...state.appointments[id],
       interview: { ...interview },
     };
-    console.log(appointment);
+
     const appointments = {
       ...state.appointments,
       [id]: appointment,
     };
-    console.log(appointments);
+
+    let daysCopy = [...state.days];
+    let theDay = daysCopy.find((day) => {
+      return day.appointments.includes(id);
+    });
+
     return axios.put(`/api/appointments/${id}`, { interview }).then(() => {
-      setState({ ...state, appointments });
+      theDay.spots -= 1;
+      setState({ ...state, appointments, days: daysCopy });
     });
   };
 
@@ -50,13 +56,19 @@ const useApplicationData = () => {
       ...state.appointments[id],
       interview: null,
     };
-    console.log(appointment);
     const appointments = {
       ...state.appointments,
       [id]: appointment,
     };
+
+    let daysCopy = [...state.days];
+    let theDay = daysCopy.find((day) => {
+      return day.appointments.includes(id);
+    });
+
     return axios.delete(`/api/appointments/${id}`).then(() => {
-      setState({ ...state, appointments });
+      theDay.spots += 1;
+      setState({ ...state, appointments, days: daysCopy });
     });
   };
 
