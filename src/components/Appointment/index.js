@@ -31,11 +31,15 @@ function Appointment(props) {
     });
   };
 
-  const cancel = () => {
+  const doDelete = () => {
     transition(DELETE);
     props.cancelInterview(props.id).then(() => {
       transition(EMPTY);
     });
+  };
+
+  const wantDelete = () => {
+    transition(CONFIRM);
   };
 
   return (
@@ -46,13 +50,21 @@ function Appointment(props) {
         <Show
           student={props.interview.student}
           interviewer={props.interview.interviewer}
-          onDelete={cancel}
+          onDelete={wantDelete}
         />
       )}
       {mode === CREATE && (
         <Form interviewers={props.interviewers} onCancel={back} onSave={save} />
       )}
       {mode === SAVING && <Status message={"Saving"} />}
+      {mode === CONFIRM && (
+        <Confirm
+          onConfirm={doDelete}
+          onCancel={back}
+          message={"Confirm to Delete"}
+        />
+      )}
+
       {mode === DELETE && <Status message={"Deleting"} />}
     </article>
   );
