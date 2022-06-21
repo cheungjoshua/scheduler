@@ -31,7 +31,7 @@ export default function Application(props) {
     });
   }, []);
 
-  //Create the apppointment
+  //Create the appointment
   const bookInterview = (id, interview) => {
     const appointment = {
       ...state.appointments[id],
@@ -64,11 +64,15 @@ export default function Application(props) {
     });
   };
 
+  // Use helper function get daily appointments
   const dailyAppointments = getAppointmentsForDay(state, state.day);
 
+  // Map the daily appointments to single component
   const appointmentArray = dailyAppointments.map((appointment) => {
+    // Use helper function get the interview of the day
     const interview = getInterview(state, appointment.interview);
 
+    // Use helper function get array of interviewers of the day
     const interviewers = getInterviewersForDay(state, state.day);
 
     return (
