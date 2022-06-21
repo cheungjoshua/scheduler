@@ -31,16 +31,37 @@ export default function Application(props) {
     });
   }, []);
 
+  //Create the apppointment
   const bookInterview = (id, interview) => {
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview },
     };
+    console.log(appointment);
     const appointments = {
       ...state.appointments,
       [id]: appointment,
     };
-    setState({ ...state, appointments });
+    console.log(appointments);
+    return axios.put(`/api/appointments/${id}`, { interview }).then(() => {
+      setState({ ...state, appointments });
+    });
+  };
+
+  //Delete the appointment
+  const cancelInterview = (id) => {
+    const appointment = {
+      ...state.appointments[id],
+      interview: null,
+    };
+    console.log(appointment);
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment,
+    };
+    return axios.delete(`/api/appointments/${id}`).then(() => {
+      setState({ ...state, appointments });
+    });
   };
 
   const dailyAppointments = getAppointmentsForDay(state, state.day);
@@ -58,6 +79,7 @@ export default function Application(props) {
         interview={interview}
         interviewers={interviewers}
         bookInterview={bookInterview}
+        cancelInterview={cancelInterview}
       />
     );
   });
