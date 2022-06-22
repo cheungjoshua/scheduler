@@ -10,11 +10,14 @@ export default function Form(props) {
   const reset = function () {
     setStudent("");
     setInterviewer(null);
+    return;
   };
 
   const cancel = function () {
-    props.onCancel();
     reset();
+    props.onCancel();
+    setError("");
+    return;
   };
 
   function validate() {
@@ -27,6 +30,7 @@ export default function Form(props) {
       return;
     }
 
+    setError("");
     props.onSave(student, interviewer);
   }
 
@@ -46,7 +50,9 @@ export default function Form(props) {
             value={student}
           />
         </form>
+
         <section className="appointment__validation">{error}</section>
+
         <InterviewerList
           onChange={(e) => {
             setInterviewer(e);
@@ -60,7 +66,7 @@ export default function Form(props) {
           <Button onClick={cancel} danger>
             Cancel
           </Button>
-          <Button onClick={validate} confirm data-testid="onSave">
+          <Button onClick={validate} confirm>
             Save
           </Button>
         </section>
