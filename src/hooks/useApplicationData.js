@@ -39,7 +39,7 @@ const useApplicationData = () => {
       [id]: appointment,
     };
 
-    let daysCopy = [...state.days];
+    let daysCopy = [...state.days].map((ii) => ({ ...ii }));
     let theDay = daysCopy.find((day) => {
       return day.appointments.includes(id);
     });
@@ -56,12 +56,13 @@ const useApplicationData = () => {
       ...state.appointments[id],
       interview: null,
     };
+
     const appointments = {
       ...state.appointments,
       [id]: appointment,
     };
 
-    let daysCopy = [...state.days];
+    let daysCopy = [...state.days].map((ii) => ({ ...ii }));
     let theDay = daysCopy.find((day) => {
       return day.appointments.includes(id);
     });
