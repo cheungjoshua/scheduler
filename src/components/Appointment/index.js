@@ -92,7 +92,7 @@ function Appointment(props) {
         <Confirm
           onConfirm={doDelete}
           onCancel={back}
-          message={"Confirm to Delete"}
+          message={"Sure to delete?"}
         />
       )}
 
