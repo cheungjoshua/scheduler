@@ -20,6 +20,7 @@ App that create meetings for students to connect with mentors in real time.
 ## Setup
 
 Install dependencies with `npm install`.
+(Please read Warning & tips)
 
 ## Running Webpack Development Server
 
@@ -47,7 +48,7 @@ npm run cypress
 
 ## Warnings & Tips
 
-Please confirm system running Node v15.x.x before run npm install. App and dependencies will crash if using v16 and up.
+Please confirm system running Node v15.x.x and python2 before run npm install. App and dependencies will not work properly with v16 and up.
 
 ## Dependencies
 
