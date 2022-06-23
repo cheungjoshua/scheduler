@@ -2,14 +2,20 @@
 
 App that create meetings for students to connect with mentors in real time.
 
-- Search Page, search page can search and filter all resources
-  !["Search Page"](https://github.com/rdininno/resource_wall/blob/main/doc/Screen%20Shot%202022-06-09%20at%2017.10.52.png?raw=true)
-- Search Page, search page can search and filter all resources
-  !["Search Page"](https://github.com/rdininno/resource_wall/blob/main/doc/Screen%20Shot%202022-06-09%20at%2017.10.52.png?raw=true)
-- Search Page, search page can search and filter all resources
-  !["Search Page"](https://github.com/rdininno/resource_wall/blob/main/doc/Screen%20Shot%202022-06-09%20at%2017.10.52.png?raw=true)
-- Search Page, search page can search and filter all resources
-  !["Search Page"](https://github.com/rdininno/resource_wall/blob/main/doc/Screen%20Shot%202022-06-09%20at%2017.10.52.png?raw=true)
+- Show current interviews and available spots
+  !["Home Page"](https://github.com/cheungjoshua/scheduler/blob/master/doc/Screen%20Shot%202022-06-22%20at%2019.58.19.png?raw=true)
+
+- Create a interview by click the "+" button in the middle
+  !["Create interview"](https://github.com/cheungjoshua/scheduler/blob/master/doc/Screen%20Shot%202022-06-22%20at%2019.58.35.png?raw=true)
+
+- Fill the student name and select the mentor
+  !["Input name and pick mentor"](https://github.com/cheungjoshua/scheduler/blob/master/doc/Screen%20Shot%202022-06-22%20at%2019.58.51.png?raw=true)
+
+- Interview after created
+  !["Interview created"](https://github.com/cheungjoshua/scheduler/blob/master/doc/Screen%20Shot%202022-06-22%20at%2019.59.01.png?raw=true)
+
+- Confirm state when user delete the interview
+  !["Delete interview"](https://github.com/cheungjoshua/scheduler/blob/master/doc/Screen%20Shot%202022-06-22%20at%2019.59.17.png?raw=true)
 
 ## Setup
 
