@@ -9,7 +9,7 @@ const useApplicationData = () => {
     interviewers: {},
   });
 
-  // Api call one time
+  // Api call once when render
   useEffect(() => {
     Promise.all([
       axios.get(`/api/days`),
@@ -24,55 +24,66 @@ const useApplicationData = () => {
   }, []);
 
   // Copy everything from state, and set the day with the day that
-  //  child component provide
+  // child component provide
   const setDay = (day) => setState({ ...state, day });
 
-  //Create the appointment
+  // Create the appointment
   const bookInterview = (id, interview) => {
+    // Copy old appointment with provided ID and update the interview obj
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview },
     };
 
+    // Add the updated appointment to appointments obj
     const appointments = {
       ...state.appointments,
       [id]: appointment,
     };
 
+    // Deep clone the days object for update spots
     let daysCopy = [...state.days].map((ii) => ({ ...ii }));
     let theDay = daysCopy.find((day) => {
       return day.appointments.includes(id);
     });
 
+    // Use axios do API call to create interview appointment,
+    // and setState the new obj created above
     return axios.put(`/api/appointments/${id}`, { interview }).then(() => {
       theDay.spots -= 1;
       setState({ ...state, appointments, days: daysCopy });
     });
   };
 
-  //Delete the appointment
+  // Delete the appointment
   const cancelInterview = (id) => {
+    // Update the old individual appointment with interview to null
     const appointment = {
       ...state.appointments[id],
       interview: null,
     };
 
+    // Copy and update the old appointments obj with appointment above
     const appointments = {
       ...state.appointments,
       [id]: appointment,
     };
 
+    // Deep clone the days object for update spots
     let daysCopy = [...state.days].map((ii) => ({ ...ii }));
     let theDay = daysCopy.find((day) => {
       return day.appointments.includes(id);
     });
 
+    // Use axios do API call to delete interview appointment,
+    // and setState the new obj created above
     return axios.delete(`/api/appointments/${id}`).then(() => {
       theDay.spots += 1;
       setState({ ...state, appointments, days: daysCopy });
     });
   };
 
+  // Export above functions in one obj
   return { state, setDay, bookInterview, cancelInterview };
 };
 

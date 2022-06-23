@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+// Function for rendering Appointment Component
+
 const useVisualMode = (initial) => {
   const [mode, setMode] = useState(initial);
   const [history, setHistory] = useState([initial]);
