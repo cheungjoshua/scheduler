@@ -1,6 +1,6 @@
 # Interview Scheduler
 
-App that create meetings for students to connect with mentors in real time.
+Interview Scheduler is a responsive single-page application (SPA) build with React. A user can book an interview in an empty appointment slot for a specific day of the week. The user can also edit or delete their appointment.
 
 - Show current interviews and available spots
   !["Home Page"](https://github.com/cheungjoshua/scheduler/blob/master/doc/Screen%20Shot%202022-06-22%20at%2019.58.19.png?raw=true)
@@ -19,11 +19,9 @@ App that create meetings for students to connect with mentors in real time.
 
 ## Setup
 
-Install dependencies with `npm install`.
-(Please read Warning & tips)
-
-Schedular-api is required to run schedular app locally.
-["Interview Schedular API"](https://github.com/lighthouse-labs/scheduler-api)
+- Fork this repository.
+- Clone your repositiroy onto your local device.
+- Install dependencies with `npm install`. (Please read Warning & tips)
 
 ## Running Webpack Development Server
 
@@ -49,15 +47,26 @@ npm run storybook
 npm run cypress
 ```
 
+## Running Interview Scheduler API PostgreSQL Database
+
+Visit the repository below and follow the README.md file:
+
+```
+https://github.com/lighthouse-labs/scheduler-api
+```
+
 ## Warnings & Tips
 
-Please confirm system running Node v15.x.x and python2 before run npm install. App and dependencies will not work properly with v16 and up.
+Please confirm system running Node v15.x.x and python2 before run npm install. App and dependencies will not work properly with v16 and up.\
+
+Schedular-api is required to run schedular app locally.
 
 ## Dependencies
 
 - React @16.9.0
 - Node @15.14.0
 - Cypress @9.7.0
+- Classnames
 - Storybook
 - Jest
 - Axios
