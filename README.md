@@ -22,6 +22,9 @@ App that create meetings for students to connect with mentors in real time.
 Install dependencies with `npm install`.
 (Please read Warning & tips)
 
+Schedular-api is required to run schedular app locally.
+["Interview Schedular API"](https://github.com/lighthouse-labs/scheduler-api)
+
 ## Running Webpack Development Server
 
 ```sh
