@@ -49,7 +49,8 @@ npm run cypress
 
 ## Running Interview Scheduler API PostgreSQL Database
 
-Visit the repository below and follow the README.md file to run app locally.
+Schedular-api is required to run schedular app locally.
+Visit the repository below and follow the README.md file for setup.
 
 ```
 https://github.com/lighthouse-labs/scheduler-api
