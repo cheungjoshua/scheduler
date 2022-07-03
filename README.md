@@ -2,7 +2,7 @@
 
 Interview Scheduler is a responsive single-page application (SPA) build with React. A user can book an interview appointment for a specific day of the week. The user can also edit or delete their appointment.
 
-- This site was deployed on [Netlify](https://github.com/cheungjoshua/scheduler/tree/master)
+- This site was deployed on [Netlify](https://calm-dieffenbachia-65527d.netlify.app/)
 
 - Show current interviews and available spots
   !["Home Page"](https://github.com/cheungjoshua/scheduler/blob/master/doc/Screen%20Shot%202022-06-22%20at%2019.58.19.png?raw=true)
